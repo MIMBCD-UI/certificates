@@ -1,0 +1,103 @@
+\documentclass[16pt]{scrartcl}
+\usepackage[a4paper,left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{pdflscape,setspace,amsmath,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{calligra}
+\usepackage{tgschola}
+\usepackage{fourier-orns}
+\usepackage{graphicx}
+\usepackage{wallpaper}
+\usepackage[normalem]{ulem}
+\usepackage{charter}
+\usepackage{microtype}
+\hyphenpenalty 100000
+%=============================
+\input Zallman.fd
+\newcommand*\initfamily{\usefont{U}{Zallman}{xl}{n}}
+%=============================
+\usepackage{datatool}
+\DTLloaddb{names}{../../data/singlename.csv}
+%=============================
+\def\signature#1#2{\parbox[b]{1in}{\smash{#1}\vskip12pt}
+\hfill \parbox[t]{2.8in}{\shortstack{\vrule width 2.8in height 0.4pt\\\small#2}}}
+\def\sigskip{\vskip0.4in plus 0.1in}
+        \def\beginskip{\vskip0.5875in plus 0.1in}
+%=============================
+\definecolor{title}{RGB}{44, 62, 80}
+\definecolor{header}{RGB}{44, 62, 80}
+\definecolor{name}{RGB}{44, 62, 80}
+\definecolor{project}{RGB}{44, 62, 80}
+\definecolor{mark}{RGB}{0, 159, 227}
+\definecolor{symbol}{RGB}{26, 188, 156}
+%=============================
+\begin{document}
+\begin{landscape}
+\linespread{2}\selectfont
+\pagestyle{empty}
+\TileWallPaper{1\paperwidth}{1\paperheight}{borders/border.png}
+%=============================
+\DTLforeach{names}{
+\dg=degree, \name=Name, \dgn=Dgn, \sub=subject, \inst=inst, \place=place}{
+%=============================
+\noindent
+\begin{minipage}[l]{1.5in}
+ \includegraphics[width=1.50\linewidth]{logos/logo-2.png}
+\end{minipage}
+\hfill
+%=============================
+\begin{minipage}[c]{6.5in}
+{\centering
+{\onehalfspacing
+    {\LARGE\bfseries {\color{header}{{Instituto Superior Técnico}}}}\\%\initfamily
+    {\calligra Thesis Dissertation}
+    \vskip0.4em
+    {Department of Computer Science and Engineering\\}
+    {\Large\bfseries\color{project}{MIMBCD-UI}}}\\
+    \par}
+\end{minipage}
+\hfill
+%=============================
+\begin{minipage}[r]{1.5in}
+\includegraphics[width=1.00\linewidth]{logos/logo-1.png}
+\end{minipage}
+\vskip1em
+%=============================
+\begin{minipage}[l]{1.5in}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{6.5in}
+{\centering
+{\onehalfspacing
+    {\Large\bfseries \color{title}{Certificate of Participation}}\par
+    \vskip0.5em
+    {\color{symbol}\Large\decofourleft\quad{\color{mark}\decoone}\quad\decofourright}
+    \par}}
+\end{minipage}
+\hfill
+\begin{minipage}[r]{1.5in}
+\end{minipage}
+\vskip1.8em
+
+{\doublespacing
+This is to certify that {\large\sffamily\bfseries\color{name}{\dg.~\name}}, {\dgn} at {\sub}, {\inst}, {\place}, has participated in the User Analyzis on ``\emph{\color{project}{MIMBCD-UI Project}}''   organized  by  Department of Computer Science and Engineering, Instituto Superior Técnico,  Universidade de Lisboa, Portugal.}
+
+\noindent
+%\beginskip
+{
+\singlespacing
+\hfill
+\begin{minipage}[c]{2.8in}
+\sigskip
+\signature{
+\includegraphics[width=3.00\linewidth]{signatures/signature.png}
+}
+{Francisco Maria Calisto\\Researcher\\francisco.calisto@tecnico.ulisboa.pt}
+\end{minipage}
+\hfill
+}
+%=============================
+\pagebreak
+}
+\end{landscape}
+\end{document}
