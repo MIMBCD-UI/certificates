@@ -1,1 +1,3 @@
-# MIMBCD-UI Collaboration Certificates
+# Collaboration Certificates
+
+<img src="banners/banner.png"/>
