@@ -24,7 +24,7 @@ Start editing with `main.tex` file and follow the instructions given there. Imag
 
 The [`moriambar`](https://github.com/MIMBCD-UI/certificates/tree/master/non-official/moriambar) example can be seen here:
 
-<img src="https://github.com/MIMBCD-UI/certificates/blob/master/non-official/moriambar/prints/print.png"/>
+<img src="non-official/moriambar/prints/print.png"/>
 
 ## About
 
