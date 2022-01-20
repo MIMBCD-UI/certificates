@@ -220,4 +220,4 @@ TSWLatexianTemp*
 *-tags.tex
 
 # ignore all samples
-/samples
+!/samples
