@@ -221,3 +221,7 @@ TSWLatexianTemp*
 
 # ignore all samples
 !/samples
+
+# ignore all images
+.DS_Store
+samples/.DS_Store
